@@ -1,7 +1,29 @@
-# 🚌 Ahmedabad Bus Seat Booking System
+<h1 align="center">🚌 Ahmedabad Bus Seat Booking System</h1>
 
-A modern full-stack bus seat booking web application built to simplify the process of searching buses, selecting seats, and managing bookings. The project provides a responsive user interface, secure authentication, real-time seat availability, and an admin dashboard for managing buses and bookings.
+<p align="center">
+A full-stack bus seat booking platform built with React, Node.js, Express and PostgreSQL.
+</p>
 
+<p align="center">
+
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/Node.js-22-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express.js-Backend-black?style=for-the-badge&logo=express"/>
+<img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Authentication-JWT-success?style=flat-square"/>
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square"/>
+<img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"/>
+<img src="https://img.shields.io/github/stars/dharmikd2905/Ahmedabad-Bus-Seat-Booking-System?style=flat-square"/>
+<img src="https://img.shields.io/github/forks/dharmikd2905/Ahmedabad-Bus-Seat-Booking-System?style=flat-square"/>
+
+</p>
 ---
 
 ## 📌 Overview
