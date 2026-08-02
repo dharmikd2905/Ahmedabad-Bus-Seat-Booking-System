@@ -1,102 +1,269 @@
-# Cloud-based City Bus Tracking and Seat Booking System using Docker Containers and AWS Cloud
+# 🚌 Ahmedabad Bus Seat Booking System
 
-Full-stack project with React frontend, Node.js/Express backend, PostgreSQL database, dataset-driven route/schedule master data, real-time seat booking updates, admin controls, and live bus tracking simulation.
+A modern full-stack bus seat booking web application built to simplify the process of searching buses, selecting seats, and managing bookings. The project provides a responsive user interface, secure authentication, real-time seat availability, and an admin dashboard for managing buses and bookings.
 
-## Architecture
+---
 
-- `frontend`: React + Vite premium-style booking UI (mobile responsive, card layouts, sticky search, booking flow).
-- `backend`: Express REST APIs for auth, search, seat booking, cancellation, admin dataset/tracking operations.
-- `backend/db/schema.sql`: relational schema for users, routes, buses, seats, bookings, payments, live tracking.
-- `backend/data/dataset.csv`: uploaded dataset used as source-of-truth for schedule/route masters.
-- `docker-compose.yml`: frontend, backend, postgres container orchestration.
+## 📌 Overview
 
-## Dataset Handling
+Ahmedabad Bus Seat Booking System is designed to provide a seamless online bus reservation experience.
 
-- Uploaded dataset file is copied to `backend/data/dataset.csv`.
-- Ingestion service auto-detects CSV/XLSX/XLS/JSON using `xlsx` parsing.
-- Dataset columns mapped:
-  - `Route No` -> `routes.route_no`
-  - `Source` -> `routes.source`
-  - `Destination` -> `routes.destination`
-  - `Major Boarding Point` -> `boarding_points`
-  - `Major Drop Point` -> `dropping_points`
-  - `First Bus`, `Last Bus`, `Frequency` -> route schedule metadata
-- Missing fields are stored as `NULL`/empty and shown as `N/A` in UI gracefully.
-- Static route master data is separate from dynamic booking and seat inventory data.
+Users can:
 
-## Main Features
+- Search available buses
+- View bus details
+- Select preferred seats
+- Book tickets securely
+- Manage their bookings
 
-- Customer authentication (JWT signup/login)
-- Bus search from dataset-backed routes
-- Bus details with boarding and dropping points
-- Seat selection map with available/selected/booked/female-reserved colors
-- Booking flow: search -> details -> seats -> boarding/dropping -> passenger -> confirmation
-- Transaction-safe seat booking with DB locks and conflict checks (prevents overbooking)
-- Cancellation with immediate seat release
-- My bookings page
-- Admin: dataset reload/upload, live location updates
-- Live bus tracking API + frontend tracker
+Administrators can:
 
-## API Overview
+- Manage buses
+- Manage routes
+- View bookings
+- Update schedules
+- Manage seat availability
 
-- `POST /api/auth/signup`
-- `POST /api/auth/login`
-- `GET /api/buses/search?source=&destination=`
-- `GET /api/buses/:busId`
-- `GET /api/routes/:routeId/points`
-- `GET /api/buses/:busId/seats?date=YYYY-MM-DD`
-- `POST /api/bookings` (auth)
-- `POST /api/bookings/:bookingId/cancel` (auth)
-- `GET /api/bookings/me` (auth)
-- `GET /api/tracking/:busId`
-- `PUT /api/admin/tracking/:busId` (admin auth)
-- `POST /api/admin/dataset/upload` (admin auth, multipart file)
-- `POST /api/admin/dataset/reload` (admin auth)
+---
 
-## Local Run (without Docker)
+# ✨ Features
 
-### Backend
+### 👤 User
 
-1. `cd backend`
-2. `npm install`
-3. Copy `.env.example` to `.env`
-4. Ensure PostgreSQL is running and `db/schema.sql` is applied
-5. `npm run seed`
-6. `npm run dev`
+- User Registration & Login
+- JWT Authentication
+- Search buses by source and destination
+- View bus details
+- Interactive seat selection
+- Passenger information form
+- Booking confirmation
+- QR Code Ticket
+- View booking history
+- Cancel bookings
 
-### Frontend
+---
 
-1. `cd frontend`
-2. `npm install`
-3. Copy `.env.example` to `.env`
-4. `npm run dev`
+### 🛠 Admin
 
-## Docker Run
+- Secure Admin Login
+- Manage Bus Routes
+- Manage Buses
+- Manage Seat Availability
+- View All Bookings
+- Upload & Manage Route Dataset
 
-From project root:
+---
 
-1. `docker compose up --build`
-2. Frontend: `http://localhost:5173`
-3. Backend: `http://localhost:5000/api/health`
+# 🚀 Tech Stack
 
-## AWS Free-Tier Deployment Guidance
+## Frontend
 
-- **Compute**: EC2 t2.micro/t3.micro for Dockerized frontend + backend.
-- **Database**: RDS PostgreSQL free-tier (or PostgreSQL on EC2 for strict free budget).
-- **Storage**: S3 for dataset backups, booking exports, static files.
-- **Networking**:
-  - Security Groups: allow 80/443 for app, 5432 restricted to app SG.
-  - Optional ALB + ACM for HTTPS.
-- **Optional CDN**: CloudFront in front of static frontend.
-- **Environment**:
-  - Store secrets in `.env` on EC2 (or AWS Systems Manager Parameter Store).
-  - Set `DATABASE_URL`, `JWT_SECRET`, `CORS_ORIGIN`, `DATASET_PATH`.
+- React.js
+- Vite
+- React Router
+- Axios
+- React Icons
+- CSS
 
-## Notes for Academic Viva
+## Backend
 
-- Clearly show static vs dynamic data split:
-  - Static dataset -> routes/schedule masters.
-  - Dynamic DB -> seat inventory, bookings, payments, live location.
-- Demonstrate overbooking prevention via DB transaction + row lock in `POST /api/bookings`.
-- Demonstrate cancellation seat release in `POST /api/bookings/:bookingId/cancel`.
-- Demonstrate containerized architecture and cloud deployment path.
+- Node.js
+- Express.js
+- JWT Authentication
+- Multer
+- Express Validator
+
+## Database
+
+- PostgreSQL
+
+## DevOps
+
+- Docker
+- Docker Compose
+
+---
+
+# 📂 Project Structure
+
+```
+Ahmedabad-Bus-Seat-Booking-System
+│
+├── frontend
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+├── backend
+│   ├── src
+│   ├── db
+│   ├── data
+│   └── package.json
+│
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/dharmikd2905/Ahmedabad-Bus-Seat-Booking-System.git
+```
+
+```bash
+cd Ahmedabad-Bus-Seat-Booking-System
+```
+
+---
+
+## Using Docker
+
+```bash
+docker-compose up --build
+```
+
+---
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+---
+
+# 🔐 Environment Variables
+
+### Backend (.env)
+
+```
+PORT=
+DATABASE_URL=
+JWT_SECRET=
+```
+
+### Frontend (.env)
+
+```
+VITE_API_URL=
+```
+
+---
+
+# 📷 Application Screenshots
+
+## Home Page
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/94f2428d-b97a-47eb-98eb-a50309964400" />
+
+
+---
+
+## Search Results
+
+
+<img width="1710" height="588" alt="image" src="https://github.com/user-attachments/assets/f1a274a5-e7ba-4b45-be7d-ac8accd5b922" />
+
+
+
+---
+
+## Seat Selection
+
+<img width="1318" height="990" alt="image" src="https://github.com/user-attachments/assets/5a285860-e270-40b0-bdcc-8c8b06ba662e" />
+
+---
+
+## Login/SignUp Page
+
+<img width="1191" height="705" alt="image" src="https://github.com/user-attachments/assets/91845684-b409-4a3a-85f1-358519b4cb18" />
+
+
+---
+
+## Booking Confirmation
+
+<img width="939" height="906" alt="image" src="https://github.com/user-attachments/assets/d84f2c42-0b04-466b-a968-7bb961420a03" />
+
+
+---
+
+## Admin Dashboard
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e1f5e7d3-560f-485e-b218-840b093df374" />
+
+
+---
+
+# 📖 Booking Flow
+
+```
+Login/Register
+        │
+        ▼
+Search Bus
+        │
+        ▼
+Select Bus
+        │
+        ▼
+Choose Seat
+        │
+        ▼
+Passenger Details
+        │
+        ▼
+Booking Confirmation
+        │
+        ▼
+Download / View Ticket
+```
+
+---
+
+# 🎯 Key Highlights
+
+- Responsive UI
+- JWT Authentication
+- Secure Booking Flow
+- Interactive Seat Layout
+- QR Code Ticket
+- PostgreSQL Database
+- Dockerized Deployment
+- Clean Modular Architecture
+
+---
+
+# 👨‍💻 Contributors
+
+- Dharmik Dudhat
+- Ahmed
+- *(Add remaining team members)*
+
+---
+
+# 📄 License
+
+This project was developed for academic purposes.
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a **Star ⭐** on GitHub.
