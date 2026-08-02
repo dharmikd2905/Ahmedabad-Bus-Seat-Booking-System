@@ -250,20 +250,17 @@ Download / View Ticket
 
 ---
 
-# 👨‍💻 Contributors
 
-- Dharmik Dudhat
-- Ahmed
-- *(Add remaining team members)*
-
----
 
 # 📄 License
 
 This project was developed for academic purposes.
 
 ---
+## 👨‍💻 Author
 
-## ⭐ Support
+**Dharmik Dudhat**   <br>
 
-If you found this project useful, consider giving it a **Star ⭐** on GitHub.
+B.Tech, Information & Communication Technology — Pandit Deendayal Energy University (PDEU)
+
+[GitHub](https://github.com/dharmikd2905) · [LinkedIn](https://linkedin.com/in/dharmik-dudhat-66203b289)
