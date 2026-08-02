@@ -1,6 +1,6 @@
-<h1 align="center">🚌 Ahmedabad Bus Seat Booking System</h1>
+<h1>🚌 Ahmedabad Bus Seat Booking System</h1>
 
-<p align="center">
+<p>
 A full-stack bus seat booking platform built with React, Node.js, Express and PostgreSQL.
 </p>
 
@@ -13,17 +13,10 @@ A full-stack bus seat booking platform built with React, Node.js, Express and Po
 <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
 <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
 
-</p>
-
-<p align="center">
-
 <img src="https://img.shields.io/badge/Authentication-JWT-success?style=flat-square"/>
-<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square"/>
 <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"/>
-<img src="https://img.shields.io/github/stars/dharmikd2905/Ahmedabad-Bus-Seat-Booking-System?style=flat-square"/>
-<img src="https://img.shields.io/github/forks/dharmikd2905/Ahmedabad-Bus-Seat-Booking-System?style=flat-square"/>
-
 </p>
+
 ---
 
 ## 📌 Overview
