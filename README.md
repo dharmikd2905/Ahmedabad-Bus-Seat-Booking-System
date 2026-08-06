@@ -1,7 +1,7 @@
-<h1>🚌 Ahmedabad Bus Seat Booking System</h1>
+<h1>Ahmedabad Bus Seat Booking System</h1>
 
 <p>
-A full-stack bus seat booking platform built with React, Node.js, Express and PostgreSQL.
+A full-stack bus seat booking platform built with React, Node.js, Express, and PostgreSQL.
 </p>
 
 <p align="center">
@@ -17,133 +17,75 @@ A full-stack bus seat booking platform built with React, Node.js, Express and Po
 <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"/>
 </p>
 
----
+## Overview
 
-## 📌 Overview
+Ahmedabad Bus Seat Booking System is a full booking platform that lets users search for buses, pick seats, and book tickets, while giving admins tools to manage routes, buses, and schedules.
 
-Ahmedabad Bus Seat Booking System is designed to provide a seamless online bus reservation experience.
+Users can search available buses, view bus details, select seats interactively, book tickets securely, and manage their bookings.
 
-Users can:
+Admins can manage buses and routes, view all bookings, update schedules, and control seat availability.
 
-- Search available buses
-- View bus details
-- Select preferred seats
-- Book tickets securely
-- Manage their bookings
+## Features
 
-Administrators can:
-
-- Manage buses
-- Manage routes
-- View bookings
-- Update schedules
-- Manage seat availability
-
----
-
-# ✨ Features
-
-### 👤 User
-
-- User Registration & Login
-- JWT Authentication
+**User**
+- Registration and login with JWT authentication
 - Search buses by source and destination
 - View bus details
 - Interactive seat selection
 - Passenger information form
-- Booking confirmation
-- QR Code Ticket
-- View booking history
-- Cancel bookings
+- Booking confirmation with QR code ticket
+- Booking history and cancellation
 
----
+**Admin**
+- Secure admin login
+- Manage bus routes and buses
+- Manage seat availability
+- View all bookings
+- Upload and manage route dataset
 
-### 🛠 Admin
+## Tech Stack
 
-- Secure Admin Login
-- Manage Bus Routes
-- Manage Buses
-- Manage Seat Availability
-- View All Bookings
-- Upload & Manage Route Dataset
+**Frontend:** React, Vite, React Router, Axios, React Icons, CSS
 
----
+**Backend:** Node.js, Express.js, JWT authentication, Multer, Express Validator
 
-# 🚀 Tech Stack
+**Database:** PostgreSQL
 
-## Frontend
+**DevOps:** Docker, Docker Compose
 
-- React.js
-- Vite
-- React Router
-- Axios
-- React Icons
-- CSS
-
-## Backend
-
-- Node.js
-- Express.js
-- JWT Authentication
-- Multer
-- Express Validator
-
-## Database
-
-- PostgreSQL
-
-## DevOps
-
-- Docker
-- Docker Compose
-
----
-
-# 📂 Project Structure
+## Project Structure
 
 ```
-Ahmedabad-Bus-Seat-Booking-System
-│
-├── frontend
-│   ├── src
-│   ├── public
+Ahmedabad-Bus-Seat-Booking-System/
+├── frontend/
+│   ├── src/
+│   ├── public/
 │   └── package.json
-│
-├── backend
-│   ├── src
-│   ├── db
-│   ├── data
+├── backend/
+│   ├── src/
+│   ├── db/
+│   ├── data/
 │   └── package.json
-│
 ├── docker-compose.yml
 └── README.md
 ```
 
----
+## Installation
 
-# ⚙ Installation
-
-## Clone Repository
+Clone the repo:
 
 ```bash
 git clone https://github.com/dharmikd2905/Ahmedabad-Bus-Seat-Booking-System.git
-```
-
-```bash
 cd Ahmedabad-Bus-Seat-Booking-System
 ```
 
----
-
-## Using Docker
+**Using Docker:**
 
 ```bash
 docker-compose up --build
 ```
 
----
-
-## Frontend
+**Frontend:**
 
 ```bash
 cd frontend
@@ -151,9 +93,7 @@ npm install
 npm run dev
 ```
 
----
-
-## Backend
+**Backend:**
 
 ```bash
 cd backend
@@ -161,11 +101,9 @@ npm install
 npm run dev
 ```
 
----
+## Environment Variables
 
-# 🔐 Environment Variables
-
-### Backend (.env)
+Backend (`.env`):
 
 ```
 PORT=
@@ -173,108 +111,60 @@ DATABASE_URL=
 JWT_SECRET=
 ```
 
-### Frontend (.env)
+Frontend (`.env`):
 
 ```
 VITE_API_URL=
 ```
 
----
+## Application Screenshots
 
-# 📷 Application Screenshots
-
-## Home Page
+**Home Page**
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/94f2428d-b97a-47eb-98eb-a50309964400" />
 
-
----
-
-## Search Results
-
+**Search Results**
 
 <img width="1710" height="588" alt="image" src="https://github.com/user-attachments/assets/f1a274a5-e7ba-4b45-be7d-ac8accd5b922" />
 
-
-
----
-
-## Seat Selection
+**Seat Selection**
 
 <img width="1318" height="990" alt="image" src="https://github.com/user-attachments/assets/5a285860-e270-40b0-bdcc-8c8b06ba662e" />
 
----
-
-## Login/SignUp Page
+**Login / Sign Up**
 
 <img width="1191" height="705" alt="image" src="https://github.com/user-attachments/assets/91845684-b409-4a3a-85f1-358519b4cb18" />
 
-
----
-
-## Booking Confirmation
+**Booking Confirmation**
 
 <img width="939" height="906" alt="image" src="https://github.com/user-attachments/assets/d84f2c42-0b04-466b-a968-7bb961420a03" />
 
-
----
-
-## Admin Dashboard
+**Admin Dashboard**
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e1f5e7d3-560f-485e-b218-840b093df374" />
 
+## Booking Flow
 
----
+A user logs in or registers, searches for a bus, and selects one from the results. From there they choose a seat, fill in passenger details, confirm the booking, and get a ticket they can view or download.
 
-# 📖 Booking Flow
-
-```
-Login/Register
-        │
-        ▼
-Search Bus
-        │
-        ▼
-Select Bus
-        │
-        ▼
-Choose Seat
-        │
-        ▼
-Passenger Details
-        │
-        ▼
-Booking Confirmation
-        │
-        ▼
-Download / View Ticket
-```
-
----
-
-# 🎯 Key Highlights
+## Key Highlights
 
 - Responsive UI
-- JWT Authentication
-- Secure Booking Flow
-- Interactive Seat Layout
-- QR Code Ticket
-- PostgreSQL Database
-- Dockerized Deployment
-- Clean Modular Architecture
+- JWT authentication
+- Secure booking flow
+- Interactive seat layout
+- QR code ticket generation
+- PostgreSQL database
+- Dockerized deployment
+- Clean, modular architecture
 
----
-
-
-
-# 📄 License
+## License
 
 This project was developed for academic purposes.
 
----
-## 👨‍💻 Author
+## Author
 
-**Dharmik Dudhat**   <br>
+**Dharmik Dudhat**
 
 B.Tech, Information & Communication Technology — Pandit Deendayal Energy University (PDEU)
 
